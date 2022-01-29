@@ -1,0 +1,113 @@
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+}
+
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+
+  line-height: 1.5;
+}
+
+li {
+  font-size: 20px;
+}
+
+/* footer p {
+  font-size: 16px;
+} */
+
+#copyright {
+  font-size: 16px;
+}
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* article p:first-of-type {
+  color: red;
+} */
+
+/* Styling links */
+/* 
+* IMPORTANTE! EL ESTILO DE LOS LINKS SE MANEJA EN BASE A LOS ESTADOS DEL MISMO
+* ESTOS ESTADOS ESTAN DADOS POR LAS PSEUDOCLASES DE ABAJO
+*/
+/* La pseudo clase link va a apuntar a todos los anchor tag que tengan el atributo href */
+a:link,
+/* La pseudo clase visited va a manejar el estilo de los links luego de apretar el mouse (por que por defecto cambian de color) */
+a:visited {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:active {
+  font-style: italic;
+}
+/* END LINK STYLING */
