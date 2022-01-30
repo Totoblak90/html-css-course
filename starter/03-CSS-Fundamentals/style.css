@@ -1,11 +1,47 @@
-h1,
-h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
+/* NOTAS:
+  Los márgenes se colapsan entre sí por defecto, eso quiere decir que si yo tengo un elemento
+  que tiene 50px de marginbottom y el elemento que le sigue tiene 60px de margin top,
+  NO se van a separar por un total de 110px sino que automáticamente el css va a tomar el margen
+  más grande de esos dos (60) y aplicar ese SOLO.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   color: #444;
+  font-family: sans-serif;
+}
+
+.main-container {
+  width: 75%;
+  margin: 0 auto;
+  border-top: 10px solid #1098ad;
+}
+
+nav {
+  font-size: 18px;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+  height: 80px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
 }
 
 h1,
@@ -26,23 +62,42 @@ h2 {
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 h4 {
   font-size: 20px;
-
   text-transform: uppercase;
   text-align: center;
 }
 
 p {
   font-size: 22px;
-
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+}
+li:last-child {
+  margin-bottom: 0;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+.post-image {
+  width: 100%;
 }
 
 /* footer p {
@@ -65,16 +120,6 @@ li {
 
 .related {
   list-style: none;
-}
-
-.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
 }
 
 li:first-child {
