@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+.main-article {
+  border: 5px solid #444;
+}
+.main-article-header-title {
+  text-align: center;
+  background-color: #f7f7f7;
+}
+
+.main-article-header-price {
+  font-weight: 900;
+}
+
+.main-article-section-1-benefits:first-child {
+  text-transform: uppercase;
+  color: #777;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.main-article-section-1-link {
+  color: black;
+}
+.main-article-section-1-link:hover {
+  text-decoration: none;
+}
+
+.main-article-footer-title {
+  text-transform: uppercase;
+}
+
+.main-article-footer-list {
+  list-style-type: square;
+}
+
+.main-article-footer-button {
+  background-color: black;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.main-article-footer-button:hover {
+  background-color: white;
+  color: black;
+}
