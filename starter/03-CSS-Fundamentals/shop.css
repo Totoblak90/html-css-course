@@ -1,50 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1.4;
 }
-.main-article {
-  border: 5px solid #444;
-}
-.main-article-header-title {
-  text-align: center;
-  background-color: #f7f7f7;
+
+.product {
+  border: 5px solid #000;
+  width: 825px;
+  margin: 50px auto;
+  position: relative;
 }
 
-.main-article-header-price {
+.product-title {
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 15px;
+}
+
+.product-sale-tag {
+  position: absolute;
+  display: inline-block;
+  padding: 7px 15px;
+  background-color: #ec2f2f;
+  text-transform: uppercase;
+  top: -20px;
+  left: -35px;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.product-price {
   font-weight: 900;
 }
 
-.main-article-section-1-benefits:first-child {
+.product-label {
   text-transform: uppercase;
   color: #777;
   font-weight: bold;
   font-size: 12px;
+  margin-bottom: 20px;
 }
 
-.main-article-section-1-link {
-  color: black;
+.product-link:link,
+.product-link:visited {
+  display: inline-block;
+  color: #000;
+  margin-bottom: 20px;
 }
-.main-article-section-1-link:hover {
+.product-link:hover {
   text-decoration: none;
 }
 
-.main-article-footer-title {
+.product-color-selection {
+  margin-bottom: 20px;
+}
+.product-color-selection .red,
+.product-color-selection .blue,
+.product-color-selection .yellow,
+.product-color-selection .green,
+.product-color-selection .pink,
+.product-color-selection .orange {
+  display: inline-block;
+  margin-right: 18px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.pink {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
+
+.product-description {
+  margin-bottom: 15px;
+}
+
+.product-details {
   text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
-.main-article-footer-list {
+.product-details-list {
   list-style-type: square;
+  margin-left: 20px;
 }
 
-.main-article-footer-button {
-  background-color: black;
+.product-details-list-item {
+  margin-bottom: 10px;
+}
+
+.product-details-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.product-button {
+  background-color: #000;
   color: white;
   border: none;
   text-transform: uppercase;
   cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 5px solid #000;
 }
 
-.main-article-footer-button:hover {
+.product-button:hover {
   background-color: white;
-  color: black;
+  color: #000;
 }
