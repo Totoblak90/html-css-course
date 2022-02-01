@@ -1,57 +1,56 @@
+/* NOTAS:
+  Los márgenes se colapsan entre sí por defecto, eso quiere decir que si yo tengo un elemento
+  que tiene 50px de marginbottom y el elemento que le sigue tiene 60px de margin top,
+  NO se van a separar por un total de 110px sino que automáticamente el css va a tomar el margen
+  más grande de esos dos (60) y aplicar ese SOLO.
+*/
+
 * {
-  /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
 body {
+  position: relative;
   color: #444;
   font-family: sans-serif;
-
-  border-top: 10px solid #1098ad;
-  position: relative;
 }
 
-.container {
-  width: 800px;
-  /* margin-left: auto;
-  margin-right: auto; */
+.main-container {
+  width: 1200px;
   margin: 0 auto;
+  border-top: 10px solid #1098ad;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
 }
 
 .main-header {
   background-color: #f7f7f7;
-  /* padding: 20px;
-  padding-left: 40px;
-  padding-right: 40px; */
   padding: 20px 40px;
-  margin-bottom: 60px;
-  /* height: 80px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / -1;
 }
 
-nav {
+.main-header nav {
   font-size: 18px;
-  /* text-align: center; */
-}
-
-article {
-  margin-bottom: 60px;
-}
-
-.post-header {
-  margin-bottom: 40px;
-  /* position: relative; */
 }
 
 aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  /* padding-top: 50px;
-  padding-bottom: 50px; */
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
+}
+
+footer {
+  grid-column: 1 / -1;
 }
 
 /* SMALLER ELEMENTS */
@@ -67,9 +66,28 @@ h1 {
   font-style: italic;
 }
 
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
 h2 {
+  position: relative;
   font-size: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+h2::after {
+  content: "TOP";
+  font-size: 16px;
+  display: inline-block;
+  background-color: #ffe70e;
+  color: #444;
+  font-weight: bold;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
 }
 
 h3 {
@@ -82,6 +100,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -99,50 +118,7 @@ ol {
 li {
   font-size: 20px;
   margin-bottom: 10px;
-  /* display: inline; */
 }
-
-li:last-child {
-  margin-bottom: 0;
-}
-
-/* footer p {
-  font-size: 16px;
-} */
-
-/* article header p {
-  font-style: italic;
-} */
-
-#author {
-  font-style: italic;
-  font-size: 18px;
-}
-
-#copyright {
-  font-size: 16px;
-}
-
-.related-author {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* ul {
-  list-style: none;
-} */
-
-.related {
-  list-style: none;
-}
-
-body {
-  /* background-color: orangered; */
-}
-
-/* .first-li {
-  font-weight: bold;
-} */
 
 li:first-child {
   font-weight: bold;
@@ -150,118 +126,150 @@ li:first-child {
 
 li:last-child {
   font-style: italic;
+  margin-bottom: 0;
 }
 
-li:nth-child(even) {
-  /* color: red; */
+.post-header {
+  margin-bottom: 40px;
 }
 
-/* Misconception: this won't work! */
-article p:first-child {
-  color: red;
-}
-
-/* Styling links */
-a:link {
-  color: #1098ad;
-  text-decoration: none;
-}
-
-a:visited {
-  /* color: #777; */
-  color: #1098ad;
-}
-
-a:hover {
-  color: orangered;
-  font-weight: bold;
-  text-decoration: underline orangered;
-}
-
-a:active {
-  background-color: black;
-  font-style: italic;
-}
-/* LVHA */
-
-.post-img {
+.post-image {
   width: 100%;
-  height: auto;
 }
 
 nav a:link {
-  /* background-color: orangered;
-  margin: 20px;
-  padding: 20px;
-
-  display: block; */
-
-  margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
+  margin-right: 30px;
 }
 
 nav a:link:last-child {
   margin-right: 0;
 }
 
-button {
+/* footer p {
+  font-size: 16px;
+} */
+
+#copyright {
+  font-size: 16px;
+}
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-size: 14px;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.related {
+  list-style: none;
+  margin: 0;
+}
+
+.related li {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.related li:last-child {
+  margin-bottom: 0;
+}
+
+.related li div a:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* article p:first-of-type {
+  color: red;
+} */
+
+/* Styling links */
+/* 
+* IMPORTANTE! EL ESTILO DE LOS LINKS SE MANEJA EN BASE A LOS ESTADOS DEL MISMO
+* ESTOS ESTADOS ESTAN DADOS POR LAS PSEUDOCLASES DE ABAJO
+*/
+/* La pseudo clase link va a apuntar a todos los anchor tag que tengan el atributo href */
+a:link,
+/* La pseudo clase visited va a manejar el estilo de los links luego de apretar el mouse (por que por defecto cambian de color) */
+a:visited {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:active {
+  font-style: italic;
+}
+/* END LINK STYLING */
+
+.like {
   font-size: 22px;
   padding: 20px;
   cursor: pointer;
 
   position: absolute;
-  /* top: 50px;
-  left: 50px; */
   bottom: 50px;
   right: 50px;
 }
 
-h1::first-letter {
-  font-style: normal;
-  margin-right: 5px;
+/* FLOATS */
+/* .author {
+  float: left;
+  margin-top: 35px;
+  margin-left: 20px;
+}
+.author-img {
+  float: left;
+  margin-bottom: 20px;
 }
 
-h3 + p::first-line {
-  /* color: red; */
+h1 {
+  float: left;
 }
 
-h2 {
-  /* background-color: orange; */
-  position: relative;
+nav {
+  float: right;
 }
 
-h2::before {
-  content: "TOP";
-  background-color: #ffe70e;
-  color: #444;
-  font-size: 16px;
-  font-weight: bold;
-  display: inline-block;
-  padding: 5px 10px;
-  position: absolute;
-  top: -10px;
-  right: -25px;
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-/* Resolving conflicts */
-/* #copyright {
-  color: red;
+article {
+  float: left;
+  width: 825px;
 }
 
-.copyright {
-  color: blue;
+aside {
+  float: right;
+  width: 300px;
 }
 
-.text {
-  color: yellow;
-}
-
-footer p {
-  color: green !important;
+footer {
+  clear: both;
 } */
-
-/* nav a:link,
-nav p {
-  font-size: 18px;
-} */
+/* FLEX */
+.author-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.author-container {
+  align-items: center;
+}

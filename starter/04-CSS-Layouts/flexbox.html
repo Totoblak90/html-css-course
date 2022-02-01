@@ -40,6 +40,23 @@
         margin: 40px;
 
         /* FLEXBOX */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .el {
+        /* 
+        DEFAULTS
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto; 
+        */
+        /* FLEX-BASIS: SETEA EL WIDTH DE TODOS LOS ELEMENTOS DENTRO DEL FLEX CONTAINER */
+        /* FLEX-SHRINK: ESTABLECE SI EL FLEX CONTAINER VA A AJUSTAR EL TAMAÑO DEL ELEMENTO
+        PARA QUE ENTREN EN EL CONTENEDOR O NO */
+
+        flex: 1;
       }
     </style>
   </head>
@@ -54,5 +71,7 @@
       <div class="el el--7">to</div>
       <div class="el el--8">learn</div>
     </div>
+
+    <a href="index.html">Go back</a>
   </body>
 </html>

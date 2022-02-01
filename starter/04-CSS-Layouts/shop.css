@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+.product {
+  border: 5px solid #000;
+  width: 825px;
+  margin: 50px auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 250px 1fr 1fr;
+  column-gap: 40px;
+  align-items: center;
+}
+
+.product-title {
+  text-align: center;
+  background-color: #f7f7f7;
+  padding: 15px;
+  grid-column: 1 / -1;
+}
+
+.product-image {
+  width: 250px;
+  height: 250px;
+}
+
+.product-sale-tag {
+  position: absolute;
+  display: inline-block;
+  padding: 7px 15px;
+  background-color: #ec2f2f;
+  text-transform: uppercase;
+  top: -20px;
+  left: -35px;
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.product-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-weight: 900;
+}
+
+.product-label {
+  text-transform: uppercase;
+  color: #777;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.product-description {
+  margin-bottom: 15px;
+}
+
+.product-link:link,
+.product-link:visited {
+  display: inline-block;
+  color: #000;
+  margin-bottom: 20px;
+}
+.product-link:hover {
+  text-decoration: none;
+}
+
+.product-color-selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-color-selection .red,
+.product-color-selection .blue,
+.product-color-selection .yellow,
+.product-color-selection .green,
+.product-color-selection .pink,
+.product-color-selection .orange {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.red {
+  background-color: red;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
+.pink {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
+
+.product-details {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.product-details-list {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+.product-details-list-item {
+  margin-bottom: 10px;
+}
+
+.product-details-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.product-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 5px solid #000;
+  grid-column: 1 / -1;
+}
+.product-button a:link,
+.product-button a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-button:hover {
+  background-color: white;
+  color: #000;
+}
