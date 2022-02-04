@@ -49,6 +49,7 @@
         display: flex;
         align-items: center;
         gap: 86px;
+        position: relative;
       }
 
       img {
@@ -76,9 +77,57 @@
         font-size: 12px;
         color: #c3fae8;
       }
+
+      /* CONTROLS */
       .btn {
+        background-color: #fff;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+
+        position: absolute;
+        top: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .btn-icon {
+        width: 24px;
+        height: 24px;
+        stroke: #087f5b;
+        cursor: pointer;
+      }
+
+      .left-control {
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+      .right-control {
+        right: 0;
+        transform: translate(+50%, -50%);
+      }
+      .dots {
+        display: flex;
+        gap: 12px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 32px);
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border: 2px solid #087f5b;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .selected {
+        background-color: #087f5b;
       }
     </style>
   </head>
@@ -89,13 +138,12 @@
         <p class="text">
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum odio
           possimus in iusto nemo doloribus minima a accusantium illo corporis
-          hic at dolor error repudiandae blanditiis, molestias nulla
-          necessitatibus ratione."
+          hic at dolor."
         </p>
         <p class="author">Maria de Almeida</p>
         <p class="job">Senior Product Manager at EDP Comercial</p>
       </blockquote>
-      <button class="btn">
+      <button class="btn left-control">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="btn-icon"
@@ -111,7 +159,7 @@
           />
         </svg>
       </button>
-      <button class="btn">
+      <button class="btn right-control">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="btn-icon"
@@ -127,6 +175,12 @@
           />
         </svg>
       </button>
+      <div class="dots">
+        <button class="dot selected">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
     </div>
   </body>
 </html>
